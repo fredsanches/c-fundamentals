@@ -1,0 +1,19 @@
+# Default: normalize text files to LF in the repository
+* text=auto
+
+# C project files should use LF
+*.c   text eol=lf
+*.h   text eol=lf
+*.md  text eol=lf
+*.sh  text eol=lf
+
+# Windows scripts can use CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Treat binaries as binary
+*.exe binary
+*.dll binary
+*.pdb binary
+*.o   binary
+*.obj binary
