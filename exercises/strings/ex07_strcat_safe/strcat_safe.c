@@ -25,3 +25,19 @@
  */
 
 /* Add your code below this line. */
+
+#include <stdio.h>>
+
+int my_strcat_safe(
+  const char src[], 
+  const char dst[], 
+  char size_buffer
+){
+  if (size_buffer <= 0){
+    return 0;
+  }
+  size_t i = 0;
+  while (*(dst + i) != '\0'){
+
+  }
+}
