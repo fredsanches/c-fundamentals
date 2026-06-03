@@ -26,18 +26,32 @@
 
 /* Add your code below this line. */
 
-#include <stdio.h>>
+#include <stdio.h>
 
 int my_strcat_safe(
-  const char src[], 
-  const char dst[], 
-  char size_buffer
+  char dst[],
+  size_t buffer_cap,
+  const char src[]
 ){
-  if (size_buffer <= 0){
+  if (buffer_cap <= 0){
     return 0;
   }
-  size_t i = 0;
-  while (*(dst + i) != '\0'){
 
+  size_t i = 0;
+  while (i <= (buffer_cap - 1) && dst[i]){
+    i++;
+  }
+
+  // dst isn't null-terminated
+  if (i == (buffer_cap - 1)){
+    return 0;
+  }
+
+  // there's space to copy
+  size_t idx = 0;
+  while (src[idx] != '\0'){
+    dst[i] = src[idx];
+    i++;
+    idx++;
   }
 }
